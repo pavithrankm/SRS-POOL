@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="185170" started-at="2022-05-24T11:06:17 IST" finished-at="2022-05-24T11:09:22 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="185170" started-at="2022-05-24T11:06:17 IST" finished-at="2022-05-24T11:09:22 IST">
+      <class name="SRSproject.SRSproject.LoginTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:SRSproject.SRSproject.LoginTest@20d3d15a]" name="setUp" is-config="true" duration-ms="5176" started-at="2022-05-24T11:06:12 IST" finished-at="2022-05-24T11:06:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:SRSproject.SRSproject.LoginTest@20d3d15a]" name="LoginValidation" duration-ms="48987" started-at="2022-05-24T11:06:17 IST" finished-at="2022-05-24T11:07:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginValidation -->
+        <test-method status="PASS" signature="LoginFromPLP()[pri:1, instance:SRSproject.SRSproject.LoginTest@20d3d15a]" name="LoginFromPLP" duration-ms="48774" started-at="2022-05-24T11:07:06 IST" finished-at="2022-05-24T11:07:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginFromPLP -->
+        <test-method status="PASS" signature="LoginFromPDP()[pri:2, instance:SRSproject.SRSproject.LoginTest@20d3d15a]" name="LoginFromPDP" duration-ms="53666" started-at="2022-05-24T11:07:55 IST" finished-at="2022-05-24T11:08:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginFromPDP -->
+        <test-method status="PASS" signature="UnApprovedLoginValidation()[pri:3, instance:SRSproject.SRSproject.LoginTest@20d3d15a]" name="UnApprovedLoginValidation" duration-ms="33712" started-at="2022-05-24T11:08:48 IST" finished-at="2022-05-24T11:09:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UnApprovedLoginValidation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:SRSproject.SRSproject.LoginTest@20d3d15a]" name="tearDown" is-config="true" duration-ms="529" started-at="2022-05-24T11:09:22 IST" finished-at="2022-05-24T11:09:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SRSproject.SRSproject.LoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

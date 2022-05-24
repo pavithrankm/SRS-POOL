@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="106658" started-at="2022-05-17T15:13:07 IST" finished-at="2022-05-17T15:14:54 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="106658" started-at="2022-05-17T15:13:07 IST" finished-at="2022-05-17T15:14:54 IST">
+      <class name="SRSproject.SRSproject.ProductListPageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:SRSproject.SRSproject.ProductListPageTest@2fd66ad3]" name="setUp" is-config="true" duration-ms="7176" started-at="2022-05-17T15:13:00 IST" finished-at="2022-05-17T15:13:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="PLP_RegisterRedirection_GuestValidation()[pri:1, instance:SRSproject.SRSproject.ProductListPageTest@2fd66ad3]" name="PLP_RegisterRedirection_GuestValidation" duration-ms="34775" started-at="2022-05-17T15:13:07 IST" description="Register now link redirection" finished-at="2022-05-17T15:13:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PLP_RegisterRedirection_GuestValidation -->
+        <test-method status="PASS" signature="AddToCart_Validation()[pri:2, instance:SRSproject.SRSproject.ProductListPageTest@2fd66ad3]" name="AddToCart_Validation" duration-ms="71861" started-at="2022-05-17T15:13:42 IST" description="Adding Item to Cart" finished-at="2022-05-17T15:14:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddToCart_Validation -->
+      </class> <!-- SRSproject.SRSproject.ProductListPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
