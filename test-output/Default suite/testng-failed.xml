@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SRSproject.SRSproject.LoginTest">
+      <class name="SRSproject.SRSproject.CartPageTest">
         <methods>
-          <include name="LoginFromPLP"/>
+          <include name="CartPage_Count"/>
           <include name="setUp"/>
-          <include name="LoginFromPDP"/>
+          <include name="AddItemToCart_Validation"/>
+          <include name="AddItemToCart_ValidationTo_Reorder"/>
         </methods>
-      </class> <!-- SRSproject.SRSproject.LoginTest -->
+      </class> <!-- SRSproject.SRSproject.CartPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.RowIdLifetime;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -31,10 +33,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -44,6 +48,7 @@ import com.beust.jcommander.Parameter;
 public class BaseClass {
 	
 	
+		private static final String WebDriverFactory = null;
 		public static WebDriver driver;
       
 		
@@ -320,19 +325,47 @@ public class BaseClass {
 				throw new RuntimeException();
 			}
 		}
+//		
+//		public static File takeScreenShot(String filename) throws IOException  {
+//			try {
+//				File f = new File(System.getProperty("user.dir")+"\\Library\\"+filename+".png");
+//			
+//				
+//				TakesScreenshot ts = (TakesScreenshot) driver;
+//				File temp=ts.getScreenshotAs(OutputType.FILE);
+//				FileUtils.copyFile(temp, f);
+//				return f;
+//			} catch (WebDriverException e) {
+//				e.printStackTrace();
+//				throw new RuntimeException();
+//			} 
+//		}
 		
-		public static File takeScreenShot(String filename) throws IOException  {
-			try {
-				File f = new File(System.getProperty("user.dir")+"\\Library\\"+filename+".png");
-				TakesScreenshot ts = (TakesScreenshot) driver;
-				File temp=ts.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(temp, f);
-				return f;
-			} catch (WebDriverException e) {
-				e.printStackTrace();
-				throw new RuntimeException();
-			} 
-		}
+		
+		public void onTestFailure(ITestResult result) {
+	      //  Object testMap;
+			//testMap.get().fail(result.getThrowable());
+	        //add screenshot for failed test.
+	     //   WebDriver driver= WebDriverFactory.getDriver();
+	        //experimental to get screenshot
+	        driver = new Augmenter().augment(driver);
+	        String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+	        TakesScreenshot ts = (TakesScreenshot) driver;
+	        File source = ts.getScreenshotAs(OutputType.FILE);
+	    //    String destination = System.getProperty("user.dir") + "/ExtentReport/" + "/Screenshots/" + result.getMethod().getMethodName() + dateName + ".png";
+	        String destination = System.getProperty("user.dir") + File.separator + "ExtentReport" +  File.separator +"Screenshots" + File.separator + result.getMethod().getMethodName() + dateName + ".png";
+	        File finalDestination = new File(destination);
+	        try {
+	            FileUtils.copyFile(source, finalDestination);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    //    testMap.get().addScreenCaptureFromPath(destination,result.getMethod().getMethodName());
+
+	    }
+		
+		
+		
 
 		 public static void scrolltoBottomPage() {
 			try {
@@ -343,6 +376,16 @@ public class BaseClass {
 				throw new RuntimeException();
 			}
 		}
+		 
+		 public static void scrolltoTopPage() {
+				try {
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("window.scrollTo(0,-document.body.scrollHeaith)");
+				} catch (Exception e) {
+					e.printStackTrace();
+					throw new RuntimeException();
+				}
+			}
 		 
 		 public static void waitForAlertIsPresent() {
 			 try {
